@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Safety & Literacy Simulator | Educational Project</title>
+  <meta name="description" content="College societal project for education, digital literacy, and skill development. Learn to recognize phishing, scam messages, fake links, and unsafe payment requests through realistic software-only simulations.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       MANDATORY PRIVACY DISCLAIMER BANNER
+       =================================================================== -->
+  <div class="privacy-disclaimer-banner" role="alert">
+    <span class="lock-icon">🔒</span>
+    <span>
+      <strong>EDUCATIONAL SIMULATION NOTICE:</strong> This application uses simulated digital scenarios for educational purposes. It does <em>not</em> access, read, store, or modify real SMS messages, emails, WhatsApp conversations, bank accounts, contacts, or other personal data.
+    </span>
+  </div>
+
+  <!-- ===================================================================
+       SITE HEADER & NAVBAR
+       =================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" data-view-target="home">
+        <div class="brand-icon-shield">🛡️</div>
+        <div class="brand-text">
+          <span class="brand-title">Digital Safety Simulator</span>
+          <span class="brand-badge">Societal Education Project</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="site-nav-menu">
+          <li><a href="#home" class="nav-link active" data-view-target="home">Home</a></li>
+          <li><a href="#categories" class="nav-link" data-view-target="categories">Simulations</a></li>
+          <li><a href="#learn" class="nav-link" data-view-target="learn">Learn Safety</a></li>
+          <li><a href="#dashboard" class="nav-link" data-view-target="dashboard">Dashboard</a></li>
+          <li><a href="#about" class="nav-link" data-view-target="about">About Project</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Score chip, Sound, Theme) -->
+      <div class="nav-actions">
+        <div class="score-chip" title="Your Total Digital Safety Points">
+          <span>⭐</span>
+          <span class="pts" id="nav-score-value">0</span>
+          <span>pts</span>
+        </div>
+        <button class="icon-btn active" id="sound-toggle-btn" title="Toggle Sound Feedback">🔔</button>
+        <button class="icon-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">🌙</button>
+        <button class="icon-btn mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       MAIN CONTENT CONTAINER
+       =================================================================== -->
+  <main>
+
+    <!-- ===============================================================
+         1. HOME VIEW
+         =============================================================== -->
+    <section class="view-section active" id="home-view">
+      <div class="container">
+        
+        <!-- Hero Section -->
+        <div class="hero-wrapper">
+          <div class="academic-badge">
+            <span>🎓</span> College Societal Project • Education, Digital Literacy & Skill Development
+          </div>
+
+          <h1 class="hero-title">
+            Digital Safety &<br><span>Literacy Simulator</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Learn to recognize digital threats through realistic simulations. Practice identifying scam messages, malicious links, and dangerous payment requests in a safe, interactive environment.
+          </p>
+
+          <!-- Software-Only Guarantee Card -->
+          <div class="simulation-assurance-card">
+            <span class="icon">🛡️</span>
+            <div>
+              <strong>100% Safe Software-Only Simulation:</strong> All scenarios, SMS previews, payment screens, and websites shown in this tool are strictly simulated demonstrations. No real personal data, bank accounts, or external messaging APIs are used.
+            </div>
+          </div>
+
+          <!-- Primary CTAs -->
+          <div class="hero-cta-group">
+            <button class="btn btn-primary" data-view-target="categories">
+              <span>🚀 Start Simulation</span>
+            </button>
+            <button class="btn btn-secondary" data-view-target="learn">
+              <span>📚 Learn Digital Safety</span>
+            </button>
+            <button class="btn btn-outline" data-view-target="dashboard">
+              <span>📊 View My Progress</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Feature Cards Required by Specification -->
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-box f-icon-1">🎣</div>
+            <h3>Identify Phishing</h3>
+            <p>
+              Inspect realistic fake emails, urgent bank warnings, lottery messages, and typosquatted domains. Train your eyes to spot telltale red flags before clicking.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box f-icon-2">🔒</div>
+            <h3>Protect Personal Information</h3>
+            <p>
+              Master why OTPs must never be revealed, uncover how casual quizzes steal security questions, and audit invasive mobile app permission demands.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box f-icon-3">⚡</div>
+            <h3>Make Safer Online Decisions</h3>
+            <p>
+              Understand why receiving money never requires entering a UPI PIN, debunk the HTTPS padlock myth, and practice official reporting protocols.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Quick Preview Box -->
+        <div class="home-preview-box">
+          <div class="preview-badge-header">
+            <h3><span>⚡</span> Quick Challenge Preview</h3>
+            <span class="live-simulation-tag">
+              <span class="pulse-dot"></span> LIVE SIMULATOR READY
+            </span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+            <div style="background: var(--bg-card); border-radius: 12px; padding: 1.25rem; border: 1px solid var(--border);">
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">SIMULATED INCOMING SMS:</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #f87171; margin-bottom: 0.5rem;">
+                "Your Bank NetBanking has been BLOCKED due to pending KYC. Click to update now: http://hdfc-kyc.online"
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">
+                What is the first thing you should check?
+              </div>
+            </div>
+
+            <div>
+              <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Can you spot the 3 critical red flags?</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                Test yourself across 21 realistic scenarios spanning SMS, Email, UPI Payments, Password Security, Privacy, Fake Websites, and Social Media.
+              </p>
+              <button class="btn btn-primary" data-view-target="categories" style="padding: 0.65rem 1.25rem; font-size: 0.95rem;">
+                Explore All 7 Threat Categories →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- How It Works Flow -->
+        <div class="how-it-works">
+          <div class="section-label">How The Simulator Works</div>
+          <h2 class="section-heading">4 Simple Steps to Digital Vigilance</h2>
+
+          <div class="steps-flow-grid">
+            <div class="step-flow-card">
+              <div class="step-number">1</div>
+              <h4>Choose Category</h4>
+              <p>Select from 7 key threat domains like SMS, UPI, or Email safety.</p>
+            </div>
+
+            <div class="step-flow-card">
+              <div class="step-number">2</div>
+              <h4>Inspect Scenario</h4>
+              <p>Examine realistic fictional messages inside mobile and desktop mockups.</p>
+            </div>
+
+            <div class="step-flow-card">
+              <div class="step-number">3</div>
+              <h4>Decide Action</h4>
+              <p>Choose what you would do when confronted with the situation.</p>
+            </div>
+
+            <div class="step-flow-card">
+              <div class="step-number">4</div>
+              <h4>Get Evaluated</h4>
+              <p>Receive immediate points, red flag breakdowns, and safety explanations.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         2. CATEGORY SELECTION VIEW
+         =============================================================== -->
+    <section class="view-section" id="categories-view">
+      <div class="container">
+        <div class="view-header">
+          <div class="academic-badge">Step 1 • Choose Your Practice Area</div>
+          <h2>Select a Simulation Category</h2>
+          <p>
+            Each module contains realistic simulated digital situations designed to test and sharpen your defensive instincts.
+          </p>
+        </div>
+
+        <!-- Grid dynamically populated by ViewController.renderCategoryCards() -->
+        <div class="categories-grid" id="categories-grid"></div>
+
+        <!-- Comprehensive Full Assessment Banner -->
+        <div class="mixed-quiz-banner">
+          <div class="mixed-quiz-text">
+            <h3>🎯 Full Digital Safety Assessment (Mixed Mode)</h3>
+            <p>Take a randomized test of 10 mixed threats across all 7 categories to evaluate your comprehensive digital safety readiness.</p>
+          </div>
+          <button class="btn btn-primary" onclick="SimulatorEngine.startCategory('all')">
+            Start 10-Question Assessment →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         3. SIMULATOR VIEW (DEVICE MOCKUP + INTERACTIVE QUESTIONS)
+         =============================================================== -->
+    <section class="view-section" id="simulator-view">
+      <div class="container">
+
+        <!-- Simulation Header Bar (Progress & Category) -->
+        <div class="sim-header-card">
+          <div class="sim-breadcrumb">
+            <span style="color: var(--text-muted);">Practicing:</span>
+            <span class="sim-breadcrumb-cat" id="sim-breadcrumb-cat">SMS & Messaging</span>
+          </div>
+
+          <div class="sim-progress-box">
+            <div class="sim-progress-bar-bg">
+              <div class="sim-progress-bar-fill" id="sim-progress-bar-fill"></div>
+            </div>
+            <span class="sim-step-text" id="sim-step-text">Scenario 1 of 3</span>
+          </div>
+        </div>
+
+        <!-- Two-Column Interactive Layout -->
+        <div class="simulator-layout">
+          
+          <!-- Left Column: Realistic Device Mockup -->
+          <div class="device-stage" id="device-stage-container">
+            <!-- Dynamically populated by SimulatorEngine.renderDeviceMockup() -->
+          </div>
+
+          <!-- Right Column: Interactive Question & Action Decision -->
+          <div class="interaction-card">
+            <span class="scenario-threat-badge" id="scenario-threat-badge">
+              ⚠️ Threat: Lottery Phishing
+            </span>
+
+            <h2 class="scenario-title" id="scenario-title">
+              The Surprise Festive Lottery Prize
+            </h2>
+
+            <div class="question-prompt" id="question-prompt">
+              What would you do?
+            </div>
+
+            <!-- Dynamic Options List -->
+            <div class="options-list" id="options-list-container">
+              <!-- Dynamically populated by SimulatorEngine.renderCurrentScenario() -->
+            </div>
+
+            <!-- Submit Decision Button -->
+            <button class="btn btn-primary btn-submit-answer" id="btn-submit-answer" disabled>
+              Submit Answer
+            </button>
+
+            <!-- Feedback Modal / Sliding Card -->
+            <div class="feedback-container" id="feedback-card-container">
+              <!-- Dynamically populated by SimulatorEngine.submitAnswer() -->
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         6. FINAL RESULTS PAGE ("YOUR DIGITAL SAFETY REPORT")
+         =============================================================== -->
+    <section class="view-section" id="report-view">
+      <div class="container">
+
+        <!-- Report Hero Card -->
+        <div class="report-hero-card">
+          <div class="report-badge-tier tier-guardian" id="report-tier-badge">
+            Cyber Guardian 🛡️
+          </div>
+          <h2 class="report-title">Your Digital Safety Report</h2>
+          <p class="report-subtitle" id="report-tier-desc">
+            Here is your evaluation report based on the decisions you made during this interactive simulation session.
+          </p>
+
+          <!-- Key Metrics Grid -->
+          <div class="report-metrics-grid">
+            <div class="metric-card">
+              <div class="metric-value" id="report-final-score">0 / 30</div>
+              <div class="metric-label">Session Score</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value" id="report-accuracy">0%</div>
+              <div class="metric-label">Safety Accuracy</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value" id="report-correct-count">0</div>
+              <div class="metric-label">Safe Decisions</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value" id="report-attempted-count">0</div>
+              <div class="metric-label">Scenarios Attempted</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category-wise Performance -->
+        <div class="report-section">
+          <div class="report-section-header">
+            <h3><span>📊</span> Category-wise Performance</h3>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Points earned vs maximum possible</span>
+          </div>
+
+          <div class="category-performance-list" id="report-category-breakdown-list">
+            <!-- Dynamically populated by ReportEngine.generateReport() -->
+          </div>
+        </div>
+
+        <!-- Areas to Improve & Mistake Diagnosis -->
+        <div class="report-section">
+          <div class="report-section-header">
+            <h3><span>🔍</span> Areas to Improve (Vulnerability Diagnosis)</h3>
+            <span style="font-size: 0.85rem; color: #f87171;">Threat vectors where unsafe or risky choices were made</span>
+          </div>
+
+          <div class="improvement-card" id="report-areas-to-improve">
+            <!-- Dynamically populated by ReportEngine.generateReport() -->
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="report-action-buttons">
+          <button class="btn btn-primary" data-view-target="categories">
+            <span>🔄 Practice Another Category</span>
+          </button>
+          <button class="btn btn-secondary" onclick="ReportEngine.openCertificate()">
+            <span>🏆 View Certificate of Recognition</span>
+          </button>
+          <button class="btn btn-outline" data-view-target="learn">
+            <span>📚 Review Recommended Lessons</span>
+          </button>
+          <button class="btn btn-outline" onclick="window.print()">
+            <span>🖨️ Print / Save Report Card</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         7. LEARNING SECTION ("LEARN DIGITAL SAFETY")
+         =============================================================== -->
+    <section class="view-section" id="learn-view">
+      <div class="container">
+        <div class="view-header">
+          <div class="academic-badge">Curriculum • Practical Cyber Literacy</div>
+          <h2>Learn Digital Safety</h2>
+          <p>
+            Short, bite-sized lessons with real-world examples, side-by-side comparisons, and interactive mini-quizzes to fortify your everyday digital habits.
+          </p>
+        </div>
+
+        <!-- Search and Filter Bar -->
+        <div class="lessons-filter-bar">
+          <input
+            type="text"
+            class="lesson-search-input"
+            id="lesson-search-input"
+            placeholder="🔍 Search lessons (e.g. OTP, phishing, QR code, passwords)..."
+            oninput="ViewController.searchLessons(this.value)"
+          >
+
+          <div class="lesson-categories-tabs">
+            <button class="lesson-tab-btn active" data-cat="all" onclick="ViewController.filterLessons('all')">All</button>
+            <button class="lesson-tab-btn" data-cat="email" onclick="ViewController.filterLessons('email')">Email & Phishing</button>
+            <button class="lesson-tab-btn" data-cat="payments" onclick="ViewController.filterLessons('payments')">Payments & UPI</button>
+            <button class="lesson-tab-btn" data-cat="password" onclick="ViewController.filterLessons('password')">Passwords & 2FA</button>
+            <button class="lesson-tab-btn" data-cat="privacy" onclick="ViewController.filterLessons('privacy')">Privacy & OTPs</button>
+            <button class="lesson-tab-btn" data-cat="websites" onclick="ViewController.filterLessons('websites')">Websites & Links</button>
+            <button class="lesson-tab-btn" data-cat="social" onclick="ViewController.filterLessons('social')">Social Media</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Accordion of 9 Lessons -->
+        <div class="lessons-accordion" id="lessons-accordion-container">
+          <!-- Dynamically populated by ViewController.renderLessons() -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         9. DASHBOARD VIEW
+         =============================================================== -->
+    <section class="view-section" id="dashboard-view">
+      <div class="container">
+        <div class="view-header">
+          <div class="academic-badge">Personal Progress & Mastery</div>
+          <h2>Digital Safety Dashboard</h2>
+          <p>Track your ongoing learning journey, unlocked defense badges, and lifetime vigilance score.</p>
+        </div>
+
+        <div class="dashboard-grid">
+          
+          <!-- Left: User Profile & Quick Status -->
+          <div class="user-profile-card">
+            <div class="profile-avatar-circle">🎓</div>
+            <h3 class="profile-name" id="dash-user-name">Digital Citizen</h3>
+            <div class="profile-role-tag">Student Learner</div>
+
+            <div class="report-badge-tier tier-guardian" id="dash-tier-badge" style="margin-bottom: 1.5rem;">
+              Cyber Guardian 🛡️
+            </div>
+
+            <div class="stat-pills-stack">
+              <div class="stat-pill-row">
+                <span>Lifetime Points:</span>
+                <span class="stat-pill-val" id="dash-total-score">0</span>
+              </div>
+              <div class="stat-pill-row">
+                <span>Scenarios Done:</span>
+                <span class="stat-pill-val" id="dash-scenarios-completed">0</span>
+              </div>
+              <div class="stat-pill-row">
+                <span>Safe Decisions:</span>
+                <span class="stat-pill-val" id="dash-safe-decisions">0</span>
+              </div>
+              <div class="stat-pill-row">
+                <span>Safety Rate:</span>
+                <span class="stat-pill-val" id="dash-accuracy-rate">0%</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <button class="btn btn-outline" id="reset-progress-btn" style="width: 100%; font-size: 0.82rem; color: #f87171; border-color: rgba(239, 68, 68, 0.3);">
+                🗑️ Reset Progress Data
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Badges & Recommended Action -->
+          <div class="dashboard-main-col">
+            
+            <!-- Badges Showcase -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3><span>🏆</span> Defense Badges Unlocked</h3>
+                <span style="font-size: 0.82rem; color: var(--text-muted);">Earn badges by mastering categories</span>
+              </div>
+              <div class="badges-showcase-grid" id="dash-badges-grid">
+                <!-- Dynamically populated by ViewController.renderDashboard() -->
+              </div>
+            </div>
+
+            <!-- Quick Practice Action Card -->
+            <div class="dash-card" style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.15) 0%, rgba(14, 165, 233, 0.15) 100%);">
+              <h3 style="margin-bottom: 0.5rem;">Ready to sharpen your skills?</h3>
+              <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+                Try out our simulated threats in Payment Safety and Phishing detection to earn your next badge.
+              </p>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="btn btn-primary" data-view-target="categories">
+                  Browse All Categories →
+                </button>
+                <button class="btn btn-secondary" onclick="SimulatorEngine.startCategory('payments')">
+                  Practice UPI Safety 💳
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         ABOUT PROJECT VIEW
+         =============================================================== -->
+    <section class="view-section" id="about-view">
+      <div class="container">
+        <div class="about-project-card">
+          <div class="academic-badge">Academic Project Documentation</div>
+          <h2>About the Digital Safety & Literacy Simulator</h2>
+          
+          <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+            This software project is developed as a college Societal Impact Project under the theme <strong>"Education, Digital Literacy and Skill Development."</strong> With India and the world rapidly digitizing everyday services, cyber fraud has become a pressing societal challenge that disproportionately affects students, senior citizens, and first-time smartphone users.
+          </p>
+
+          <div class="about-meta-grid">
+            <div class="about-meta-item">
+              <strong>Project Category</strong>
+              <span>Education & Digital Literacy</span>
+            </div>
+            <div class="about-meta-item">
+              <strong>Implementation Model</strong>
+              <span>100% Software-Only Simulation</span>
+            </div>
+            <div class="about-meta-item">
+              <strong>Target Audience</strong>
+              <span>College Students, Youth & First-time Internet Users</span>
+            </div>
+            <div class="about-meta-item">
+              <strong>National Helpline Reference</strong>
+              <span>1930 (MHA Cyber Helpline) / cybercrime.gov.in</span>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Core Societal Objectives</h3>
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem;">
+            <li><strong>Experiential Learning:</strong> Rather than boring lectures, users learn through realistic hands-on interaction without risking real money or data.</li>
+            <li><strong>Preventing UPI & Payment Fraud:</strong> Dispelling the pervasive myth that entering a UPI PIN is required to receive money or refunds.</li>
+            <li><strong>Zero-Trust Credential Security:</strong> Teaching strict vigilance against sharing OTPs, clicking suspicious attachments (.exe/.docm), or using cloned social profiles.</li>
+            <li><strong>Civic Awareness & Helplines:</strong> Educating users on the "Golden Hour" of reporting financial cyber fraud via national helpline 1930.</li>
+          </ul>
+
+          <div style="background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 12px; padding: 1.25rem; font-size: 0.9rem; color: #bae6fd;">
+            <strong>Important Software-Only Certification:</strong> This application does not require any specialized hardware or access to real SMS inboxes, WhatsApp conversations, banking portals, or personal contacts. All data is static, local, and simulated for educational safety.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Digital Safety & Literacy Simulator</h4>
+          <p>
+            A college Societal Project dedicated to empowering citizens with the digital literacy, critical thinking, and defensive skills necessary to navigate the internet safely.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h5>Quick Navigation</h5>
+          <ul class="footer-links-list">
+            <li><a href="#home" data-view-target="home">Home Page</a></li>
+            <li><a href="#categories" data-view-target="categories">Simulations</a></li>
+            <li><a href="#learn" data-view-target="learn">Lessons & Tips</a></li>
+            <li><a href="#dashboard" data-view-target="dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h5>Official Cyber Helplines</h5>
+          <ul class="footer-links-list">
+            <li><strong style="color: #38bdf8;">Dial 1930:</strong> National Cyber Helpline (India)</li>
+            <li><strong style="color: #38bdf8;">cybercrime.gov.in:</strong> Official Reporting Portal</li>
+            <li><strong style="color: #38bdf8;">PIB Fact Check:</strong> Misinformation verification</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Digital Safety & Literacy Simulator • College Societal Project</span>
+        <span>Software-Only Simulation • No Real User Data Accessed</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       CERTIFICATE OF RECOGNITION MODAL
+       =================================================================== -->
+  <div class="modal-overlay" id="certificate-modal" style="display: none;">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="ReportEngine.closeCertificate()" aria-label="Close modal">✕</button>
+      <div id="certificate-content"></div>
+      <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Print Certificate</button>
+        <button class="btn btn-secondary" onclick="ReportEngine.closeCertificate()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data/scenarios.js"></script>
+  <script src="js/data/lessons.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
